@@ -26,26 +26,17 @@ spring:
       routes:
         - id: auth
           uri:
-            lb://3RUNNER-AUTH
+            lb://WOOBEEE-AUTH
           predicates:
-            - Path=/auth/**
+            - Path=/api/v1/auth/**
 
-        - id: bookstore-image
-          uri: lb://3RUNNER-BOOKSTORE
+        - id: blog
+          uri: lb://WOOBEEE-BLOG
           predicates:
-            - Path=/bookstore/images/**
-
-        - id: bookstore
-          uri: lb://3RUNNER-BOOKSTORE
-          predicates:
-            - Path=/bookstore/**
+            - Path=/api/v1/blog/**
           filters:
             - AuthorizationFilter
 
-        - id: coupon
-          uri: lb://3RUNNER-COUPON
-          predicates:
-            - Path=/coupon/**
   jwt:
     secret: aaaasqwlkljlfasdfqwerafcxvzpojijoijopjewndllllllsserrrrrrwqexc
 

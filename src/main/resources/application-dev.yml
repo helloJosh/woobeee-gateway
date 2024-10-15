@@ -8,6 +8,6 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone:
-        http://admin:1234@localhost:8761/eureka
+        http://${EUREKA_ID}:${EUREKA_PASSWORD}@localhost:8761/eureka
   instance:
     prefer-ip-address: true
